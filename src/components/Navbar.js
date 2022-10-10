@@ -13,7 +13,7 @@ export default function Navbar() {
         </ul>
         <form>
           <div className='search-btn'>
-            <input type="text" placeholder='Search Movie Name' className='inputText' />
+            <input type="text" placeholder='Enter Keywords' className='inputText' />
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </form>
