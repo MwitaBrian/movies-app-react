@@ -20,6 +20,27 @@ export default function Home() {
     })
   }, [url_set])
 
+  const getData = (movieType) => {
+    if(movieType == "Popular")
+    {
+      url = base_url + "/discover/movie?sort_by=popularity.desc" + API_key;
+    }
+    if (movieType== "Top Rated") {
+      url = base_url + "/discover/movie/?certification_country=US&certification=R&sort_by=vote_average.desc" + API_key;
+    }
+    if (movieType== "Drama") {
+      url = base_url + "/discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10" + API_key;
+    }
+    if (movieType== "Comedy") {
+      url = base_url + "/discover/movie?with_genres=35&with_cast=23659&sort_by=revenue.desc" + API_key;
+    }
+    if (movieType== "Kids") {
+      url = base_url + "/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc" + API_key;
+    }
+
+    setUrl(url);
+  }
+
   return (
     <>
       <div className='container'>
